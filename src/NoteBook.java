@@ -65,10 +65,22 @@ public class NoteBook {
         printList();
         String choice = scanner.nextLine();
         if(choice.equals("0")){
-            return;
+            showMenu();
         }
         notes.remove(Integer.parseInt(choice)-1);
         System.out.println("the note has been removed successfully!");
         write();
+    }
+
+    public void showNote() throws IOException, ClassNotFoundException {
+        System.out.println("choose a note to show or enter '0' to go back to the main menu :");
+        printList();
+        String choice = scanner.nextLine();
+        ArrayList<Note> temp = readFile();
+
+        if(choice.equals("0")){
+            showMenu();
+        }
+        temp.get(Integer.parseInt(choice)-1).toString();
     }
 }
