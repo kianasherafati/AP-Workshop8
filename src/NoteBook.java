@@ -19,4 +19,15 @@ public class NoteBook {
         notes = readFile();
     }
 
+    public void write() throws IOException {
+        FileOutputStream  fOut = new FileOutputStream("notebook.bin");
+        ObjectOutputStream out = new ObjectOutputStream(fOut);
+        ArrayList<Note> temp = notes;
+        out.writeObject(temp);
+        fOut.close();
+        out.close();
+    }
+
+
+
 }
