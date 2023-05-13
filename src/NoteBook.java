@@ -29,8 +29,11 @@ public class NoteBook {
     }
 
     public void addNote() throws IOException, ClassNotFoundException {
-        System.out.println("please choose a topic for the note:");
+        System.out.println("please choose a topic for the note or enter '0' to go back to the main menu :");
         String topic = scanner.nextLine();
+        if (topic.equals("0")){
+            showMenu();
+        }
         System.out.println("ok. feel free to write:)");
         System.out.println("enter 'finish' to finish!");
         String body = scanner.nextLine();
