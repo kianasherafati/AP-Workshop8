@@ -5,7 +5,7 @@ public class NoteBook {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Note> notes = new ArrayList<>();
 
-    public ArrayList<Note> readFile() throws IOException, ClassNotFoundException {
+    public ArrayList<Note> readFile() throws IOException, ClassNotFoundException, FileNotFoundException, EOFException {
         FileInputStream fIn = new FileInputStream("notebook.bin");
         ObjectInputStream in = new ObjectInputStream(fIn);
         ArrayList<Note> temp = new ArrayList<>();
@@ -15,7 +15,7 @@ public class NoteBook {
         return temp;
     }
 
-    public void loadFile() throws IOException, ClassNotFoundException {
+    public void loadFile() throws IOException, ClassNotFoundException, FileNotFoundException, EOFException {
         notes = readFile();
     }
 
