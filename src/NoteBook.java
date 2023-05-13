@@ -83,4 +83,19 @@ public class NoteBook {
         }
         temp.get(Integer.parseInt(choice)-1).toString();
     }
+
+    public void export() throws IOException, ClassNotFoundException {
+        System.out.println("choose a note to export or enter '0' to go back to the main menu :");
+        printList();
+        int choice = scanner.nextInt();
+        ArrayList<Note>temp = readFile();
+        FileOutputStream fOut = new FileOutputStream("export.txt");
+        ObjectOutputStream out = new ObjectOutputStream(fOut);
+        out.writeObject(temp.get(choice - 1));
+        System.out.println("the note has been successfully exported!");
+        System.out.println("you can find it on" + "\"" + "export" + "\"" + "directory.");
+        if(choice==0){
+            showMenu();
+        }
+    }
 }
