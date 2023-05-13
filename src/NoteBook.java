@@ -14,4 +14,9 @@ public class NoteBook {
         in.close();
         return temp;
     }
+
+    public void loadFile() throws IOException, ClassNotFoundException {
+        notes = readFile();
+    }
+
 }
