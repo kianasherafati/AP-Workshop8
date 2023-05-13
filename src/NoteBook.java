@@ -28,6 +28,20 @@ public class NoteBook {
         out.close();
     }
 
-
-
+    public void addNote() throws IOException, ClassNotFoundException {
+        System.out.println("please choose a topic for the note:");
+        String topic = scanner.nextLine();
+        System.out.println("ok. feel free to write:)");
+        System.out.println("enter 'finish' to finish!");
+        String body = scanner.nextLine();
+        if (!body.equals("finish")){
+            body = scanner.nextLine();
+        }
+        else {
+            System.out.println("the new note has been added successfully");
+        }
+        Note note = new Note(topic,body);
+        notes.add(note);
+        write();
+    }
 }
