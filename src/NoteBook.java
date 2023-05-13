@@ -44,4 +44,13 @@ public class NoteBook {
         notes.add(note);
         write();
     }
+
+    public void printList() throws IOException, ClassNotFoundException {
+        notes = readFile();
+        int i = 1;
+        for (Note note : notes) {
+            System.out.println(i + "- " + note.toString());
+            i++;
+        }
+    }
 }
