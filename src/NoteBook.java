@@ -60,4 +60,15 @@ public class NoteBook {
         System.out.println("1- Add\n2- Remove\n3- Notes\n4- Export\n5- Exit");
     }
 
+    public void removeNote() throws IOException, ClassNotFoundException {
+        System.out.println("choose one of the notes to remove or enter '0' to go back to the main menu :");
+        printList();
+        String choice = scanner.nextLine();
+        if(choice.equals("0")){
+            return;
+        }
+        notes.remove(Integer.parseInt(choice)-1);
+        System.out.println("the note has been removed successfully!");
+        write();
+    }
 }
