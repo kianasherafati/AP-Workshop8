@@ -53,4 +53,8 @@ public class NoteBook {
             i++;
         }
     }
+    public static void showMenu(){
+        System.out.println("1- Add\n2- Remove\n3- Notes\n4- Export\n5- Exit");
+    }
+
 }
